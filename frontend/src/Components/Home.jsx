@@ -11,7 +11,7 @@ const Home = () => {
     if (!token) {
       navigate("/login");
     } else {
-      fetch("/tasks")
+      fetch("https://task-management-api-utk.vercel.app/tasks")
         .then((res) => res.json())
         .then((data) => setTasks(data))
         .catch((err) => console.error("Error fetching tasks:", err));
