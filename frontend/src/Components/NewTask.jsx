@@ -5,7 +5,7 @@ const NewTask = () => {
   const [tasks, setTasks] = useState([]);
 
   const addTask = (taskName) => {
-    fetch("/tasks", {
+    fetch("https://task-management-api-utk.vercel.app/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
