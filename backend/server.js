@@ -42,6 +42,10 @@ app.get('/users', (req, res) => {
   res.json(users);
 });
 
+app.get('/', (req, res) => {
+  res.json("Hello");
+});
+
 // Get all tasks
 app.get('/tasks', (req, res) => {
   res.json(tasks);
