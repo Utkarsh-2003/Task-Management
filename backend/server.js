@@ -8,7 +8,13 @@ const PORT = process.env.PORT || 5000;
 const secretKey = "u@dgjuvncsk%hfj&#$Ggkhig!"; // Change this to a secure secret key
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://task-management-utk.vercel.app"],
+    credentials: true,
+    methods: ["POST", "GET"],
+  })
+);
 
 const users = [];
 const tasks = [];
@@ -38,21 +44,21 @@ app.post("/login", (req, res) => {
 });
 
 // Get all users (for checking purpose only)
-app.get('/users', (req, res) => {
+app.get("/users", (req, res) => {
   res.json(users);
 });
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.json("Hello");
 });
 
 // Get all tasks
-app.get('/tasks', (req, res) => {
+app.get("/tasks", (req, res) => {
   res.json(tasks);
 });
 
 // Add a new task
-app.post('/tasks', (req, res) => {
+app.post("/tasks", (req, res) => {
   const newTask = { name: req.body.name };
   tasks.push(newTask);
   res.status(201).json(newTask);
