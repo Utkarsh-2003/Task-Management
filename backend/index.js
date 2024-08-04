@@ -5,7 +5,7 @@ const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const secretKey = process.env.SECRETKEY // Change this to a secure secret key
+const secretKey = "u@34shcgbr"
 
 app.use(bodyParser.json());
 app.use(
