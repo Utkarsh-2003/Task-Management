@@ -11,7 +11,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://task-management-api-wheat.vercel.app/register", {
+      await axios.post("https://task-management-api-utk.vercel.app/register", {
         username,
         password,
       });
